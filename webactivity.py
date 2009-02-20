@@ -551,15 +551,12 @@ class WebActivity(activity.Activity):
 
     def _set_accept_languages(self): 
         try: 
-            lang = os.environ['LANG'] # e.g. es_UY.UTF-8 
-        except: 
-            return 
+            lang = os.environ['LANG'].strip('\n') # e.g. es_UY.UTF-8 
+        except KeyError:
+            return
     
-        if len(lang) != 11: 
-            _logger.debug("Set_Accept_language: bad LANG length") 
-            return 
-    
-        if not lang.endswith(".UTF-8") or lang[2] != "_": 
+        if (not lang.endswith(".utf8") or not lang.endswith(".UTF-8")) \
+                and lang[2] != "_":
             _logger.debug("Set_Accept_language: unrecognised LANG format") 
             return 
          
