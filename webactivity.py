@@ -125,6 +125,8 @@ import hulahop
 hulahop.set_app_version(os.environ['SUGAR_BUNDLE_VERSION'])
 hulahop.startup(_profile_path)
 
+from xpcom import components
+
 from browser import Browser
 from edittoolbar import EditToolbar
 from webtoolbar import WebToolbar
@@ -164,6 +166,8 @@ class WebActivity(activity.Activity):
         sessionhistory.init(self._browser)
         progresslistener.init(self._browser)
         filepicker.init(self)
+        
+        self._set_accept_languages()
 
         _seed_xs_cookie()
 
@@ -545,4 +549,24 @@ class WebActivity(activity.Activity):
             downloadmanager.remove_all_downloads()
             self.close(force=True)
 
-
+    def _set_accept_languages(self): 
+        try: 
+            lang = os.environ['LANG'] # e.g. es_UY.UTF-8 
+        except: 
+            return 
+    
+        if len(lang) != 11: 
+            _logger.debug("Set_Accept_language: bad LANG length") 
+            return 
+    
+        if not lang.endswith(".UTF-8") or lang[2] != "_": 
+            _logger.debug("Set_Accept_language: unrecognised LANG format") 
+            return 
+         
+        # e.g. es-uy, es 
+        pref = lang[0:2] + "-" + lang[3:5].lower()  + ", " + lang[0:2] 
+    
+        cls = components.classes["@mozilla.org/preferences-service;1"] 
+        prefService = cls.getService(components.interfaces.nsIPrefService) 
+        branch = prefService.getBranch('') 
+        branch.setCharPref('intl.accept_languages', pref) 
