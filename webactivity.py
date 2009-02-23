@@ -1,4 +1,5 @@
 # Copyright (C) 2006, Red Hat, Inc.
+# Copyright (C) 2009 Martin Langhoff, Simon Schampijer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +27,9 @@ import sha
 import base64
 import time
 import shutil
- 
+import sqlite3
+import cjson
+
 from sugar.activity import activity
 from sugar.graphics import style
 import telepathy
@@ -44,6 +47,14 @@ _profile_version = 0
 _profile_path = os.path.join(activity.get_activity_root(), 'data/gecko')
 _version_file = os.path.join(_profile_path, 'version')
 
+_plugin_path = os.path.join(os.environ['SUGAR_BUNDLE_PATH'], 'plugins')
+_mozplugger_conf_path = os.path.join(os.environ['SUGAR_BUNDLE_PATH'], 
+                                     'plugins', 'conf')
+
+# Setup some env variables for the embedded PDF viewer
+os.environ['MOZ_PLUGIN_PATH'] = _plugin_path
+os.environ['OPERA_DIR'] = _mozplugger_conf_path #XXX
+
 if os.path.exists(_version_file):
     f = open(_version_file)
     _profile_version = int(f.read())
@@ -60,9 +71,69 @@ if _profile_version < PROFILE_VERSION:
     f.write(str(PROFILE_VERSION))
     f.close()
 
+def _seed_xs_cookie():
+    ''' Create a HTTP Cookie to authenticate with the Schoolserver
+    '''
+
+    prof = profile.get_profile()
+    # profile.jabber_registered is old and buggy
+    # - check for jabber_server instead
+    if not prof.jabber_server:
+        _logger.debug('seed_xs_cookie: not registered yet')
+        return
+
+    jabber_server = prof.jabber_server
+
+    pubkey = profile.get_profile().pubkey
+    cookie_data = {'color': profile.get_color().to_string(),
+                   'pkey_hash': sha.new(pubkey).hexdigest()}
+
+    db_path = os.path.join(_profile_path, 'cookies.sqlite')
+    try:
+        cookies_db = sqlite3.connect(db_path)
+        c = cookies_db.cursor()
+
+        c.execute('''CREATE TABLE IF NOT EXISTS
+                     moz_cookies 
+                     (id INTEGER PRIMARY KEY,
+                      name TEXT,
+                      value TEXT,
+                      host TEXT,
+                      path TEXT,
+                      expiry INTEGER,
+                      lastAccessed INTEGER,
+                      isSecure INTEGER,
+                      isHttpOnly INTEGER)''')
+
+        c.execute('''SELECT id
+                     FROM moz_cookies
+                     WHERE name=? AND host=? AND path=?''',
+                  ('xoid', jabber_server, '/'))
+        
+        if c.fetchone():
+            _logger.debug('seed_xs_cookie: Cookie exists already')
+            return
+
+        expire = int(time.time()) + 10*365*24*60*60
+        c.execute('''INSERT INTO moz_cookies (name, value, host, 
+                                              path, expiry, lastAccessed,
+                                              isSecure, isHttpOnly)
+                     VALUES(?,?,?,?,?,?,?,?)''',
+                  ('xoid', cjson.encode(cookie_data), jabber_server,
+                   '/', expire, 0, 0, 0 ))
+        cookies_db.commit()
+        cookies_db.close()
+    except sqlite3.Error, e:
+        _logger.error('seed_xs_cookie: %s' % e)
+    else:
+        _logger.debug('seed_xs_cookie: Updated cookie successfully')
+
+
 import hulahop
 hulahop.set_app_version(os.environ['SUGAR_BUNDLE_VERSION'])
 hulahop.startup(_profile_path)
+
+from xpcom import components
 
 from browser import Browser
 from edittoolbar import EditToolbar
@@ -103,6 +174,10 @@ class WebActivity(activity.Activity):
         sessionhistory.init(self._browser)
         progresslistener.init(self._browser)
         filepicker.init(self)
+        
+        self._set_accept_languages()
+
+        _seed_xs_cookie()
 
         toolbox = activity.ActivityToolbox(self)
 
@@ -482,3 +557,21 @@ class WebActivity(activity.Activity):
             downloadmanager.remove_all_downloads()
             self.close(force=True)
 
+    def _set_accept_languages(self): 
+        try: 
+            lang = os.environ['LANG'].strip('\n') # e.g. es_UY.UTF-8 
+        except KeyError:
+            return
+    
+        if (not lang.endswith(".utf8") or not lang.endswith(".UTF-8")) \
+                and lang[2] != "_":
+            _logger.debug("Set_Accept_language: unrecognised LANG format") 
+            return 
+         
+        # e.g. es-uy, es 
+        pref = lang[0:2] + "-" + lang[3:5].lower()  + ", " + lang[0:2] 
+    
+        cls = components.classes["@mozilla.org/preferences-service;1"] 
+        prefService = cls.getService(components.interfaces.nsIPrefService) 
+        branch = prefService.getBranch('') 
+        branch.setCharPref('intl.accept_languages', pref) 
