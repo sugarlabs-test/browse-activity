@@ -48,8 +48,8 @@ _profile_path = os.path.join(activity.get_activity_root(), 'data/gecko')
 _version_file = os.path.join(_profile_path, 'version')
 
 _plugin_path = os.path.join(os.environ['SUGAR_BUNDLE_PATH'], 'plugins')
-_mozplugger_conf_path = os.path.join(os.environ['SUGAR_BUNDLE_PATH'], 'plugins', \
-                'conf')
+_mozplugger_conf_path = os.path.join(os.environ['SUGAR_BUNDLE_PATH'], 
+                                     'plugins', 'conf')
 
 # Setup some env variables for the embedded PDF viewer
 os.environ['MOZ_PLUGIN_PATH'] = _plugin_path
