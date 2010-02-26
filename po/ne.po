@@ -7,13 +7,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-06-14 00:30-0400\n"
-"PO-Revision-Date: 2008-08-01 03:24-0400\n"
-"Last-Translator: Bibek Kafle <oxese.eax@gmail.com>\n"
+"PO-Revision-Date: 2009-12-24 00:20-0400\n"
+"Last-Translator: Basanta Shrestha <basanta.shrestha@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0rc2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.2.1\n"
 
 #: activity/activity.info:2 webactivity.py:113
 msgid "Browse"
@@ -76,7 +78,7 @@ msgstr "लिङ्क खोल्ने"
 
 #: palettes.py:94 palettes.py:142
 msgid "Copy"
-msgstr "प्रतिलिपि बनाउने"
+msgstr "प्रतिलीपि बनाउ"
 
 #: viewtoolbar.py:34
 msgid "Zoom out"
