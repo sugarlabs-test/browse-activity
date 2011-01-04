@@ -120,3 +120,7 @@ msgstr ""
 #: webtoolbar.py:174
 msgid "Reload"
 msgstr ""
+
+#: webtoolbar.py:248
+msgid "Home page"
+msgstr ""
