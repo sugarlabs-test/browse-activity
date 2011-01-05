@@ -151,6 +151,9 @@ msgstr "Marcador"
 msgid "Reload"
 msgstr "Recargar"
 
+msgid "Home page"
+msgstr "Página de inicio"
+
 # Fuente is commonly used to denote "source"
 #~ msgid "Source"
 #~ msgstr "Fuente"
