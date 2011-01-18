@@ -1,10 +1,14 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # This file is distributed under the same license as the PACKAGE package.
 # Fabian Affolter <fab@fedoraproject.org>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: web\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-14 00:30-0400\n"
+"POT-Creation-Date: 2009-04-29 17:08-0400\n"
 "PO-Revision-Date: 2008-06-28 10:17-0400\n"
 "Last-Translator: Markus Schlager <m.slg@gmx.de>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
@@ -14,41 +18,41 @@ msgstr ""
 "X-Generator: Pootle 1.1.0rc2\n"
 "X-Poedit-Language: German\n"
 
-#: activity/activity.info:2 webactivity.py:113
+#: activity/activity.info:2 webactivity.py:189
 msgid "Browse"
 msgstr "Durchsuchen"
 
-#: browser.py:149
+#: browser.py:172
 msgid "Source"
 msgstr "Quelle"
 
-#: downloadmanager.py:141
+#: downloadmanager.py:147
 msgid "Download started"
 msgstr "Herunterladen gestartet"
 
-#: downloadmanager.py:143 downloadmanager.py:157
+#: downloadmanager.py:148 downloadmanager.py:161
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: downloadmanager.py:155
+#: downloadmanager.py:160
 msgid "Download completed"
 msgstr "Herunterladen abgeschlossen"
 
-#: downloadmanager.py:160
+#: downloadmanager.py:164
 msgid "Show in Journal"
 msgstr "Im Journal zeigen"
 
-#: downloadmanager.py:163
+#: downloadmanager.py:167
 msgid "Ok"
 msgstr "Ok"
 
-#: downloadmanager.py:169
+#: downloadmanager.py:173
 #, python-format
 msgid "File %s from %s."
 msgstr "Datei %s von %s."
 
-#: downloadmanager.py:245
+#: downloadmanager.py:254
 #, python-format
 msgid ""
 "Downloading %s from \n"
@@ -69,11 +73,11 @@ msgstr "Nächstes"
 msgid "Remove"
 msgstr "Entfernen"
 
-#: palettes.py:89
+#: palettes.py:90
 msgid "Follow link"
 msgstr "Link verfolgen"
 
-#: palettes.py:94 palettes.py:142
+#: palettes.py:95 palettes.py:142
 msgid "Copy"
 msgstr "Kopieren"
 
@@ -97,47 +101,47 @@ msgstr "Ablage anzeigen"
 msgid "Hide Tray"
 msgstr "Ablage verbergen"
 
-#: webactivity.py:109
+#: webactivity.py:185
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: webactivity.py:121
+#: webactivity.py:197
 msgid "View"
 msgstr "Ansicht"
 
-#: webactivity.py:140 webactivity.py:141
+#: webactivity.py:216 webactivity.py:217
 msgid "blank"
 msgstr "leer"
 
-#: webactivity.py:463
+#: webactivity.py:539
 msgid "Download in progress"
 msgstr "Herunterladen erfolgt gerade"
 
-#: webactivity.py:464
+#: webactivity.py:540
 msgid "Stopping now will cancel your download"
 msgstr "Jetzt stoppen wird das Herunterladen abbrechen"
 
-#: webactivity.py:466
+#: webactivity.py:542
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: webactivity.py:468 webtoolbar.py:334
+#: webactivity.py:544 webtoolbar.py:355
 msgid "Stop"
 msgstr "Stopp"
 
-#: webtoolbar.py:212
+#: webtoolbar.py:233
 msgid "Back"
 msgstr "Zurück"
 
-#: webtoolbar.py:219
+#: webtoolbar.py:240
 msgid "Forward"
 msgstr "Vorwärts"
 
-#: webtoolbar.py:242
+#: webtoolbar.py:263
 msgid "Bookmark"
 msgstr "Lesezeichen"
 
-#: webtoolbar.py:337
+#: webtoolbar.py:358
 msgid "Reload"
 msgstr "Neu laden"
 
