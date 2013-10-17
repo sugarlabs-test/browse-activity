@@ -1,0 +1,286 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-08 11:21-0500\n"
+"PO-Revision-Date: 2013-07-29 18:38+0200\n"
+"Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ayc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#  "Navegar"
+#: activity/activity.info:2 webactivity.py:274
+msgid "Browse"
+msgstr "Internet taypita yatiña"
+
+#  "Eliminar"
+#: linkbutton.py:95
+msgid "Remove"
+msgstr "Chhaqtayaña"
+
+#  "Editar"
+#: webactivity.py:271
+msgid "Edit"
+msgstr "Chiqachaña"
+
+#  "Ver"
+#: webactivity.py:277
+msgid "View"
+msgstr "Uñjaña"
+
+#  "Descarga en curso"
+#  "Descargas en curso"
+#: webactivity.py:655
+msgid "Download in progress"
+msgid_plural "Downloads in progress"
+msgstr[0] "Talliqaña arkaña"
+msgstr[1] "Talliqañanaka arkaña"
+
+#  "Detener ahora cancelará la descarga"
+#  "Detener ahora cancelará las descargas"
+#: webactivity.py:658
+msgid "Stopping now will erase your download"
+msgid_plural "Stopping now will erase your downloads"
+msgstr[0] "Talliqaña arkaña sayt'ayaña"
+msgstr[1] "Talliqañanaka arkaña sayt'ayaña"
+
+#  "Continuar la descarga"
+#  "Continuar las descargas"
+#: webactivity.py:663
+msgid "Continue download"
+msgid_plural "Continue downloads"
+msgstr[0] "Talliqaña arkaskakiña"
+msgstr[1] "Talliqañanaka arkaskakiña"
+
+#  "Parar"
+#: webactivity.py:667 webtoolbar.py:450
+msgid "Stop"
+msgstr "Sayt'ayaña"
+
+#  "Página inicial"
+#: webtoolbar.py:259
+msgid "Home page"
+msgstr "Qallta laphi"
+
+#  "Volver"
+#: webtoolbar.py:281
+msgid "Back"
+msgstr "Kutt'aña"
+
+#  "Avanzar"
+#: webtoolbar.py:288
+msgid "Forward"
+msgstr "Nayrtaña"
+
+#  "Añadir lengueta"
+#: webtoolbar.py:296
+msgid "Add a tab"
+msgstr "Laphi qalluchaña"
+
+#  "Marcador"
+#: webtoolbar.py:303
+msgid "Bookmark"
+msgstr "Chimpuña"
+
+#  "Recargar"
+#: webtoolbar.py:453
+msgid "Reload"
+msgstr "Ch'amanchaña"
+
+#  "Mantener el enlace"
+#: palettes.py:143
+msgid "Keep link"
+msgstr "Mayachata suyt'aña"
+
+#  "Copiar el enlace"
+#: palettes.py:151
+msgid "Copy link"
+msgstr "Mayachaña talliqaña"
+
+#  "Seguir el enlace"
+#: palettes.py:159
+msgid "Follow link"
+msgstr "Mayachaña arkaña"
+
+#  "Mantener la imagen"
+#: palettes.py:209
+msgid "Keep image"
+msgstr "Uñtasïwi arkaña"
+
+#  "Copiar la imagen"
+#: palettes.py:217
+msgid "Copy image"
+msgstr "Uñtasïwi talliqaña"
+
+#  "Anterior"
+#: edittoolbar.py:92
+msgid "Previous"
+msgstr "Kutt'aña"
+
+#  "Siguiente"
+#: edittoolbar.py:99
+msgid "Next"
+msgstr "Jutiri"
+
+#  "Reducir"
+#: viewtoolbar.py:34
+msgid "Zoom out"
+msgstr "Jisk'aptayaña"
+
+#  "Ampliar"
+#: viewtoolbar.py:40
+msgid "Zoom in"
+msgstr "Jach'aptayaña"
+
+#  "Pantalla completa"
+#: viewtoolbar.py:51
+msgid "Fullscreen"
+msgstr "Maypacha uñtawi"
+
+#  "Mostrar Bandeja"
+#: viewtoolbar.py:89
+msgid "Show Tray"
+msgstr "Luräwinaka qhanstayaña"
+
+#  "Esconder Bandeja"
+#: viewtoolbar.py:93
+msgid "Hide Tray"
+msgstr "Luräwinaka chhaqtayaña"
+
+#  "Descarga iniciada"
+#: downloadmanager.py:175
+msgid "Download started"
+msgstr "Talliqaña qalltata"
+
+#  "Descarga terminada"
+#: downloadmanager.py:190
+msgid "Download completed"
+msgstr "Talliqaña tukuta"
+
+#  "Mostrar en el Diario"
+#: downloadmanager.py:194
+msgid "Show in Journal"
+msgstr "Sapüru luräwiru qananchaña"
+
+#  "Ok"
+#: downloadmanager.py:197
+msgid "Ok"
+msgstr "Ukhamawa"
+
+#  "De: %s"
+#: downloadmanager.py:204
+#, python-format
+msgid "From: %s"
+msgstr "%s ... ukata"
+
+#  "Bajando %s desde \n"
+#  "%s."
+#: downloadmanager.py:346
+#, fuzzy
+msgid ""
+"Downloading %2$s from \n"
+"%1$s."
+msgstr ""
+"%s ... talliqaña \n"
+"%s ... chanikama."
+
+#~ msgid ""
+#~ "Surf the world! Here you can do research, watch educational videos, take "
+#~ "online courses, find books, connect with friends and more."
+#~ msgstr ""
+#~ "¡Aka pachana thaqma! Akana maya yatxatäwi ch'amanchasma, yatiqaña "
+#~ "uñjäwinaka uñjaña, yatiñanaka ch'amamnchaña katuqaña, pankanaka jakiña, "
+#~ "masinakampi jakisiña ukata juk'ampinakampi."
+
+#~ msgid "Untitled"
+#~ msgstr "Jani p'iqinchiri sutini"
+
+#~ msgid "Loading..."
+#~ msgstr "Jist'araskiwa..."
+
+#~ msgid "This web page could not be loaded"
+#~ msgstr "akïri thaqaña wakichäwixa janiwa qhantayasiti"
+
+#~ msgid ""
+#~ "\"%s\" could not be loaded. Please check for typing errors, and make sure "
+#~ "you are connected to the Internet."
+#~ msgstr ""
+#~ "\"%s\" janiwa qhantaña muniti. Qillqaña pantjatacha utji uka suma "
+#~ "uñakipma, Internet wakichäwixa qhantatati."
+
+#~ msgid "Try again"
+#~ msgstr "Mayampi yant'ma"
+
+#~ msgid "Not enough space to download"
+#~ msgstr "Wakichatanaka apaqañataki janiwa chanixa utjiti"
+
+#~ msgid ""
+#~ "Download \"%{filename}\" requires %{total_size_in_mb} MB of free space, "
+#~ "only %{free_space_in_mb} MB is available"
+#~ msgstr ""
+#~ "Apaqaña \"%{filename}\" wakisiwa %{total_size_in_mb} MB utjiri chani, "
+#~ "ukaki %{free_space_in_mb} MB utjirinaka"
+
+#~ msgid "%s"
+#~ msgstr "%s chimpu"
+
+#~ msgid ""
+#~ "Downloading %(filename)s from \n"
+#~ "%(source)s."
+#~ msgstr ""
+#~ "Apaqaskiwa %(filename)s \n"
+#~ " %(source)s wakichatana."
+
+#~ msgid "Follow link in new tab"
+#~ msgstr "Machaqa wakichata luraña laphi chimpuru arkaña"
+
+#~ msgid "Copy text"
+#~ msgstr "qillqata apaqaña"
+
+#~ msgid "Actual size"
+#~ msgstr "Jichha taña"
+
+#~ msgid "Previous page"
+#~ msgstr "Nayrïri laphi"
+
+#~ msgid "Next page"
+#~ msgstr "Arkiri laphi"
+
+#~ msgid "Save PDF to Journal"
+#~ msgstr "Sapüru luräwiru PDF wakichata imaña"
+
+#~ msgid "Cancel"
+#~ msgstr "Tukuyaña"
+
+#~ msgid "Downloading document..."
+#~ msgstr "wakichata... apaqkasa"
+
+#~ msgid "This document could not be loaded"
+#~ msgstr "akïri wakichata janiwa qhantaña muniti"
+
+#~ msgid "Please make sure you are connected to the Internet."
+#~ msgstr "Internet wakichäwixa qhantatati."
+
+#~ msgid "The initial page was configured"
+#~ msgstr "Qallta wakichata laphixa thakinchatäxiwa"
+
+#~ msgid "The default initial page was configured"
+#~ msgstr "Qallta wakichata pantjata laphixa thakinchatäxiwa"
+
+#~ msgid "Select as initial page"
+#~ msgstr "Qallta wakichata laphiru uñtasiri jajlliña"
+
+#~ msgid "Reset initial page"
+#~ msgstr "Qallta wakichata laphi mayampi qhantayaña"
+
+#~ msgid "Library"
+#~ msgstr "Pankanaka wakichata imata"
